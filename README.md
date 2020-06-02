@@ -1,1 +1,2 @@
 # SimpleAspNetCoreProject
+dotnet new web
