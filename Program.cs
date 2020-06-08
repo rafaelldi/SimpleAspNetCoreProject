@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -7,9 +8,9 @@ namespace SimpleAspNetCoreProject
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            Host.CreateDefaultBuilder(args)
+            await Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.Configure(builder =>
@@ -25,7 +26,7 @@ namespace SimpleAspNetCoreProject
                     });
                 })
                 .Build()
-                .Run();
+                .RunAsync();
         }
     }
 }
